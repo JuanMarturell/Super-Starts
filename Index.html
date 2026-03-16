@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///C:/Users/martu/Downloads/index%20(4).html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Super Start · Line Up</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600&family=Roboto+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg:       #0f1923;
+  --surf:     #162030;
+  --surf2:    #1e2d40;
+  --border:   #243347;
+  --amber:    #e8a020;
+  --green:    #27a060;
+  --green-dk: #1a6640;
+  --red:      #c0392b;
+  --blue:     #2980b9;
+  --text:     #dde4ee;
+  --muted:    #5a7090;
+  --soft:     #8a9db8;
+  --r:        9px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  background:var(--bg);
+  background-image:
+    radial-gradient(ellipse at 15% 0%,rgba(40,100,200,.07) 0%,transparent 55%),
+    radial-gradient(ellipse at 85% 100%,rgba(232,160,32,.05) 0%,transparent 50%);
+  color:var(--text);
+  font-family:'Source Sans 3',sans-serif;
+  min-height:100vh;
+  padding-bottom:80px;
+}
+
+/* ── HEADER ─────────────────────── */
+header{
+  background:linear-gradient(135deg,#0a1520,#162030);
+  border-bottom:2px solid var(--border);
+  padding:14px 16px 0;
+  position:relative;
+  overflow:hidden;
+}
+header::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--amber),var(--green),var(--amber),transparent);
+}
+.h-inner{
+  max-width:680px;margin:0 auto;
+  display:flex;align-items:flex-end;justify-content:space-between;
+  padding-bottom:12px;
+}
+.logo-main{font-family:'Oswald',sans-serif;font-size:2.1rem;font-weight:700;color:var(--amber);letter-spacing:.04em;line-height:1;}
+.logo-sub{font-family:'Oswald',sans-serif;font-size:.67rem;font-weight:400;color:var(--muted);letter-spacing:.28em;text-transform:uppercase;margin-top:2px;}
+.h-stats{display:flex;gap:12px;}
+.stat-pill{
+  background:var(--surf2);border:1px solid var(--border);border-radius:20px;
+  padding:4px 12px;font-family:'Roboto Mono',monospace;font-size:.72rem;color:var(--soft);
+  display:flex;align-items:center;gap:5px;
+}
+.stat-pill b{color:var(--amber);font-size:.82rem;}
+
+/* ── MAIN ───────────────────────── */
+.main{max-width:680px;margin:0 auto;padding:18px 14px;display:flex;flex-direction:column;gap:16px;}
+
+/* ── CARD ───────────────────────── */
+.card{background:var(--surf);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
+.card-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:9px 14px;border-bottom:1px solid var(--border);background:var(--surf2);
+}
+.card-title{
+  font-family:'Oswald',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+  display:flex;align-items:center;gap:7px;
+}
+.dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.dot-amber{background:var(--amber);}
+.dot-green{background:var(--green);}
+.card-count{
+  font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--amber);
+  background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.25);
+  border-radius:4px;padding:2px 8px;
+}
+
+/* ── SEARCH ─────────────────────── */
+.search-body{padding:14px;}
+.search-row{display:flex;gap:8px;}
+.search-input{
+  flex:1;background:var(--bg);border:1.5px solid var(--border);border-radius:7px;
+  color:var(--text);font-family:'Roboto Mono',monospace;font-size:1.05rem;font-weight:500;
+  padding:10px 14px;outline:none;transition:border-color .18s,box-shadow .18s;min-width:0;
+}
+.search-input:focus{border-color:var(--amber);box-shadow:0 0 0 3px rgba(232,160,32,.13);}
+.search-input::placeholder{color:var(--muted);font-weight:400;font-size:.9rem;}
+
+.btn{
+  font-family:'Oswald',sans-serif;font-size:.95rem;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;border:none;border-radius:7px;padding:10px 18px;cursor:pointer;
+  transition:all .15s;white-space:nowrap;flex-shrink:0;display:inline-flex;align-items:center;gap:5px;
+}
+.btn:active{transform:scale(.96);}
+.btn-amber{background:var(--amber);color:#0f1923;}
+.btn-amber:hover{background:#f5b030;box-shadow:0 0 12px rgba(232,160,32,.3);}
+.btn-green{background:var(--green);color:#fff;}
+.btn-green:hover{background:#2db870;}
+.btn-ghost{background:transparent;border:1.5px solid var(--border);color:var(--muted);font-size:.82rem;padding:8px 13px;}
+.btn-ghost:hover{border-color:var(--soft);color:var(--text);}
+.btn-red{background:var(--red);color:#fff;}
+.btn-red:hover{background:#e74c3c;}
+
+.chips{margin-top:9px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+.chip-lbl{font-size:.68rem;color:var(--muted);}
+.chip{
+  background:var(--surf2);border:1px solid var(--border);border-radius:20px;
+  padding:3px 10px;font-family:'Roboto Mono',monospace;font-size:.68rem;color:var(--soft);
+  cursor:pointer;transition:all .15s;
+}
+.chip:hover{background:var(--amber);color:#0f1923;border-color:var(--amber);}
+
+/* flash message below search */
+.search-flash{
+  padding:8px 14px 10px;font-size:.84rem;min-height:34px;
+  display:flex;align-items:center;gap:7px;
+  border-top:1px solid var(--border);
+}
+.f-ok{color:var(--green);}
+.f-warn{color:var(--amber);}
+.f-err{color:var(--red);}
+
+/* ── ROSTER DEL DÍA ─────────────── */
+.r-row{
+  display:flex;align-items:center;gap:9px;
+  padding:8px 14px;border-bottom:1px solid rgba(36,51,71,.55);
+  transition:background .12s;
+  animation:fadeIn .22s ease;
+}
+.r-row:last-child{border-bottom:none;}
+.r-row:hover{background:rgba(232,160,32,.04);}
+@keyframes fadeIn{from{opacity:0;transform:translateX(-6px);}to{opacity:1;transform:none;}}
+
+.r-num{
+  min-width:44px;height:28px;background:var(--surf2);border:1px solid var(--border);
+  border-radius:5px;font-family:'Roboto Mono',monospace;font-size:.78rem;font-weight:500;
+  color:var(--amber);display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.r-name{flex:1;font-size:.9rem;font-weight:600;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.r-fields{display:flex;align-items:flex-start;gap:6px;flex-shrink:0;}
+.r-field{display:flex;flex-direction:column;align-items:center;gap:2px;}
+.r-lbl{font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+
+.r-input{
+  width:52px;background:var(--bg);border:1.5px solid var(--border);border-radius:5px;
+  color:var(--text);font-family:'Roboto Mono',monospace;font-size:.95rem;font-weight:500;
+  padding:5px 0;text-align:center;outline:none;transition:border-color .15s,box-shadow .15s;
+  -moz-appearance:textfield;
+}
+.r-input::-webkit-inner-spin-button,.r-input::-webkit-outer-spin-button{-webkit-appearance:none;}
+.r-input:focus{border-color:var(--amber);box-shadow:0 0 0 2px rgba(232,160,32,.15);}
+.r-input.filled{border-color:var(--green);background:rgba(39,160,96,.08);}
+.r-input.err{border-color:var(--red)!important;box-shadow:0 0 0 2px rgba(192,57,43,.15)!important;}
+
+.r-err{font-size:.62rem;color:var(--red);min-height:12px;text-align:center;margin-top:1px;width:52px;line-height:1.2;}
+
+.r-del{
+  background:none;border:none;color:var(--muted);font-size:1rem;
+  cursor:pointer;padding:4px 6px;border-radius:5px;transition:color .12s,background .12s;flex-shrink:0;
+}
+.r-del:hover{color:var(--red);background:rgba(192,57,43,.12);}
+
+/* ── LINE UP ────────────────────── */
+.lu-row{
+  display:grid;
+  grid-template-columns:32px 1fr;
+  align-items:center;
+  padding:7px 14px;
+  border-bottom:1px solid rgba(36,51,71,.45);
+  min-height:40px;
+  transition:background .12s;
+}
+.lu-row:last-child{border-bottom:none;}
+.lu-row.filled{animation:slideIn .25s ease;}
+@keyframes slideIn{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
+.lu-row:hover{background:rgba(39,160,96,.04);}
+
+.lu-num{
+  font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;
+  color:var(--muted);text-align:center;line-height:1;
+}
+.lu-empty{
+  font-size:.78rem;color:rgba(90,112,144,.4);
+  font-style:italic;padding-left:8px;
+}
+.lu-content{display:flex;align-items:center;gap:8px;padding-left:8px;}
+.lu-badge{
+  min-width:42px;height:24px;background:var(--surf2);border:1px solid var(--border);
+  border-radius:4px;font-family:'Roboto Mono',monospace;font-size:.76rem;color:var(--amber);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.lu-name{font-size:.9rem;font-weight:600;flex:1;}
+.lu-pos{
+  min-width:36px;height:22px;background:var(--green-dk);border:1px solid var(--green);
+  border-radius:4px;font-family:'Roboto Mono',monospace;font-size:.72rem;color:#fff;
+  display:flex;align-items:center;justify-content:center;padding:0 6px;flex-shrink:0;
+}
+.lu-undo{
+  background:none;border:none;color:var(--muted);font-size:.82rem;
+  cursor:pointer;padding:3px 5px;border-radius:4px;transition:color .12s,background .12s;flex-shrink:0;
+}
+.lu-undo:hover{color:var(--amber);background:rgba(232,160,32,.1);}
+
+/* ── ACTIONS ────────────────────── */
+.action-bar{display:flex;gap:10px;flex-wrap:wrap;}
+
+/* ── MODAL ──────────────────────── */
+.overlay{
+  position:fixed;inset:0;background:rgba(5,10,18,.9);backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;z-index:300;padding:20px;
+  animation:fadeOv .2s ease;
+}
+@keyframes fadeOv{from{opacity:0;}to{opacity:1;}}
+.modal{
+  background:var(--surf);border:1px solid var(--border);border-radius:12px;
+  width:100%;max-width:400px;max-height:90vh;overflow-y:auto;
+  box-shadow:0 20px 60px rgba(0,0,0,.7);
+  animation:slideModal .25s cubic-bezier(.34,1.4,.64,1);
+}
+@keyframes slideModal{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+.modal-head{
+  background:linear-gradient(135deg,#0a1520,#162030);padding:16px 18px 12px;
+  border-bottom:1px solid var(--border);text-align:center;position:sticky;top:0;z-index:1;
+}
+.modal-title{font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:700;color:var(--amber);letter-spacing:.06em;}
+.modal-sub{font-family:'Oswald',sans-serif;font-size:.68rem;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;margin-top:2px;}
+.modal-body{padding:14px 18px;}
+.prev-row{
+  display:grid;grid-template-columns:24px 42px 1fr 38px;gap:7px;
+  align-items:center;padding:7px 0;border-bottom:1px solid rgba(36,51,71,.45);
+}
+.prev-row:last-child{border-bottom:none;}
+.prev-bat{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:700;color:var(--muted);text-align:center;}
+.prev-num{font-family:'Roboto Mono',monospace;font-size:.74rem;color:var(--amber);text-align:center;}
+.prev-name{font-size:.87rem;font-weight:600;}
+.prev-pos{
+  background:var(--green-dk);border:1px solid var(--green);border-radius:4px;
+  font-family:'Roboto Mono',monospace;font-size:.68rem;color:#fff;text-align:center;padding:2px 4px;
+}
+.res-head{
+  font-family:'Oswald',sans-serif;font-size:.62rem;letter-spacing:.22em;
+  color:var(--muted);text-transform:uppercase;margin:12px 0 7px;
+  padding-top:10px;border-top:1px solid var(--border);
+}
+.res-prev-row{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid rgba(36,51,71,.3);opacity:.7;}
+.res-prev-row:last-child{border-bottom:none;}
+.modal-foot{
+  display:flex;gap:10px;justify-content:flex-end;padding:12px 18px 16px;
+  border-top:1px solid var(--border);background:var(--surf2);position:sticky;bottom:0;
+}
+
+/* ── TOAST ──────────────────────── */
+.toast{
+  position:fixed;bottom:20px;left:50%;
+  transform:translateX(-50%) translateY(100px);
+  background:var(--green);color:#fff;
+  font-family:'Oswald',sans-serif;font-size:.95rem;font-weight:600;letter-spacing:.06em;
+  padding:10px 22px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,.4);
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1);
+  z-index:999;pointer-events:none;white-space:nowrap;
+}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+.empty{text-align:center;padding:20px;color:var(--muted);font-size:.8rem;}
+
+@media(max-width:400px){
+  .r-input{width:44px;font-size:.85rem;}
+  .logo-main{font-size:1.8rem;}
+  .btn{padding:9px 12px;font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="h-inner">
+    <div>
+      <div class="logo-main">Super Stars</div>
+      <div class="logo-sub">Line Up Manager · Softball</div>
+    </div>
+    <div class="h-stats">
+      <div class="stat-pill">Roster <b id="statR">8</b></div>
+      <div class="stat-pill">Line Up <b id="statL">11</b></div>
+    </div>
+  </div>
+</header>
+
+<div class="main">
+
+  <!-- BÚSQUEDA -->
+  <div class="card">
+    <div class="card-head">
+      <span class="card-title"><span class="dot dot-amber"></span>Buscar Jugador</span>
+    </div>
+    <div class="search-body">
+      <div class="search-row">
+        <input class="search-input" id="sInput" type="text" placeholder="Número o nomenclatura…" autocomplete="off" autocorrect="off" spellcheck="false" inputmode="text">
+        <button class="btn btn-amber" onclick="buscar()">Buscar</button>
+      </div>
+      <div class="chips">
+        <span class="chip-lbl">Especiales:</span>
+        <span class="chip" onclick="quickSearch(&#39;99B&#39;)">99B</span>
+        <span class="chip" onclick="quickSearch(&#39;34A&#39;)">34A</span>
+        <span class="chip" onclick="quickSearch(&#39;34B&#39;)">34B</span>
+      </div>
+    </div>
+    <div class="search-flash" id="sFlash" style="display: flex;"><span class="f-ok">✓ &nbsp;<strong>99B – Lester Rivas</strong> agregado al Roster del Día</span></div>
+  </div>
+
+  <!-- ROSTER DEL DÍA -->
+  <div class="card" id="rosterCard" style="">
+    <div class="card-head">
+      <span class="card-title"><span class="dot dot-amber"></span>Roster del Día</span>
+      <span class="card-count" id="rCount">8</span>
+    </div>
+    <div id="rosterList">
+    <div class="r-row" id="rr_34B">
+      <span class="r-num">34B</span>
+      <span class="r-name">Erick Longa Jr</span>
+      <div class="r-fields">
+        <div class="r-field">
+          <span class="r-lbl">Turno</span>
+          <input class="r-input" id="bat_34B" type="number" min="1" max="13" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;34B&#39;,&#39;bat&#39;,this)">
+          <span class="r-err" id="baterr_34B"></span>
+        </div>
+        <div class="r-field">
+          <span class="r-lbl">Pos (1-12)</span>
+          <input class="r-input" id="pos_34B" type="number" min="1" max="12" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;34B&#39;,&#39;pos&#39;,this)">
+          <span class="r-err" id="poserr_34B"></span>
+        </div>
+      </div>
+      <button class="r-del" onclick="removeRoster(&#39;34B&#39;)" title="Quitar">✕</button>
+    </div>
+    <div class="r-row" id="rr_35">
+      <span class="r-num">35</span>
+      <span class="r-name">Juan Carlos Marturell</span>
+      <div class="r-fields">
+        <div class="r-field">
+          <span class="r-lbl">Turno</span>
+          <input class="r-input" id="bat_35" type="number" min="1" max="13" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;35&#39;,&#39;bat&#39;,this)">
+          <span class="r-err" id="baterr_35"></span>
+        </div>
+        <div class="r-field">
+          <span class="r-lbl">Pos (1-12)</span>
+          <input class="r-input" id="pos_35" type="number" min="1" max="12" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;35&#39;,&#39;pos&#39;,this)">
+          <span class="r-err" id="poserr_35"></span>
+        </div>
+      </div>
+      <button class="r-del" onclick="removeRoster(&#39;35&#39;)" title="Quitar">✕</button>
+    </div>
+    <div class="r-row" id="rr_27">
+      <span class="r-num">27</span>
+      <span class="r-name">Orlando Woodroff</span>
+      <div class="r-fields">
+        <div class="r-field">
+          <span class="r-lbl">Turno</span>
+          <input class="r-input" id="bat_27" type="number" min="1" max="13" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;27&#39;,&#39;bat&#39;,this)">
+          <span class="r-err" id="baterr_27"></span>
+        </div>
+        <div class="r-field">
+          <span class="r-lbl">Pos (1-12)</span>
+          <input class="r-input" id="pos_27" type="number" min="1" max="12" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;27&#39;,&#39;pos&#39;,this)">
+          <span class="r-err" id="poserr_27"></span>
+        </div>
+      </div>
+      <button class="r-del" onclick="removeRoster(&#39;27&#39;)" title="Quitar">✕</button>
+    </div>
+    <div class="r-row" id="rr_29">
+      <span class="r-num">29</span>
+      <span class="r-name">Gabriel Morales</span>
+      <div class="r-fields">
+        <div class="r-field">
+          <span class="r-lbl">Turno</span>
+          <input class="r-input" id="bat_29" type="number" min="1" max="13" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;29&#39;,&#39;bat&#39;,this)">
+          <span class="r-err" id="baterr_29"></span>
+        </div>
+        <div class="r-field">
+          <span class="r-lbl">Pos (1-12)</span>
+          <input class="r-input" id="pos_29" type="number" min="1" max="12" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;29&#39;,&#39;pos&#39;,this)">
+          <span class="r-err" id="poserr_29"></span>
+        </div>
+      </div>
+      <button class="r-del" onclick="removeRoster(&#39;29&#39;)" title="Quitar">✕</button>
+    </div>
+    <div class="r-row" id="rr_33">
+      <span class="r-num">33</span>
+      <span class="r-name">Victor Rodriguez</span>
+      <div class="r-fields">
+        <div class="r-field">
+          <span class="r-lbl">Turno</span>
+          <input class="r-input" id="bat_33" type="number" min="1" max="13" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;33&#39;,&#39;bat&#39;,this)">
+          <span class="r-err" id="baterr_33"></span>
+        </div>
+        <div class="r-field">
+          <span class="r-lbl">Pos (1-12)</span>
+          <input class="r-input" id="pos_33" type="number" min="1" max="12" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;33&#39;,&#39;pos&#39;,this)">
+          <span class="r-err" id="poserr_33"></span>
+        </div>
+      </div>
+      <button class="r-del" onclick="removeRoster(&#39;33&#39;)" title="Quitar">✕</button>
+    </div>
+    <div class="r-row" id="rr_60">
+      <span class="r-num">60</span>
+      <span class="r-name">Marco Rivero</span>
+      <div class="r-fields">
+        <div class="r-field">
+          <span class="r-lbl">Turno</span>
+          <input class="r-input" id="bat_60" type="number" min="1" max="13" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;60&#39;,&#39;bat&#39;,this)">
+          <span class="r-err" id="baterr_60"></span>
+        </div>
+        <div class="r-field">
+          <span class="r-lbl">Pos (1-12)</span>
+          <input class="r-input" id="pos_60" type="number" min="1" max="12" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;60&#39;,&#39;pos&#39;,this)">
+          <span class="r-err" id="poserr_60"></span>
+        </div>
+      </div>
+      <button class="r-del" onclick="removeRoster(&#39;60&#39;)" title="Quitar">✕</button>
+    </div>
+    <div class="r-row" id="rr_99">
+      <span class="r-num">99</span>
+      <span class="r-name">Gabriel Chacon</span>
+      <div class="r-fields">
+        <div class="r-field">
+          <span class="r-lbl">Turno</span>
+          <input class="r-input" id="bat_99" type="number" min="1" max="13" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;99&#39;,&#39;bat&#39;,this)">
+          <span class="r-err" id="baterr_99"></span>
+        </div>
+        <div class="r-field">
+          <span class="r-lbl">Pos (1-12)</span>
+          <input class="r-input" id="pos_99" type="number" min="1" max="12" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;99&#39;,&#39;pos&#39;,this)">
+          <span class="r-err" id="poserr_99"></span>
+        </div>
+      </div>
+      <button class="r-del" onclick="removeRoster(&#39;99&#39;)" title="Quitar">✕</button>
+    </div>
+    <div class="r-row" id="rr_99B">
+      <span class="r-num">99B</span>
+      <span class="r-name">Lester Rivas</span>
+      <div class="r-fields">
+        <div class="r-field">
+          <span class="r-lbl">Turno</span>
+          <input class="r-input" id="bat_99B" type="number" min="1" max="13" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;99B&#39;,&#39;bat&#39;,this)">
+          <span class="r-err" id="baterr_99B"></span>
+        </div>
+        <div class="r-field">
+          <span class="r-lbl">Pos (1-12)</span>
+          <input class="r-input" id="pos_99B" type="number" min="1" max="12" value="" placeholder="–" inputmode="numeric" oninput="onInput(&#39;99B&#39;,&#39;pos&#39;,this)">
+          <span class="r-err" id="poserr_99B"></span>
+        </div>
+      </div>
+      <button class="r-del" onclick="removeRoster(&#39;99B&#39;)" title="Quitar">✕</button>
+    </div></div>
+  </div>
+
+  <!-- LINE UP -->
+  <div class="card">
+    <div class="card-head">
+      <span class="card-title"><span class="dot dot-green"></span>Line Up</span>
+      <span class="card-count" id="lCount">11 / 13</span>
+    </div>
+    <div id="lineupList"><div class="lu-row filled">
+      <span class="lu-num">1</span>
+      <div class="lu-content">
+        <span class="lu-badge">1</span>
+        <span class="lu-name">Daniel Escobar</span>
+        <span class="lu-pos">C</span>
+        <button class="lu-undo" onclick="returnToRoster(0)" title="Devolver al Roster">↩</button>
+      </div>
+    </div><div class="lu-row filled">
+      <span class="lu-num">2</span>
+      <div class="lu-content">
+        <span class="lu-badge">2</span>
+        <span class="lu-name">Felix Tovar</span>
+        <span class="lu-pos">1B</span>
+        <button class="lu-undo" onclick="returnToRoster(1)" title="Devolver al Roster">↩</button>
+      </div>
+    </div><div class="lu-row filled">
+      <span class="lu-num">3</span>
+      <div class="lu-content">
+        <span class="lu-badge">3</span>
+        <span class="lu-name">Jackson Delgado</span>
+        <span class="lu-pos">2B</span>
+        <button class="lu-undo" onclick="returnToRoster(2)" title="Devolver al Roster">↩</button>
+      </div>
+    </div><div class="lu-row filled">
+      <span class="lu-num">4</span>
+      <div class="lu-content">
+        <span class="lu-badge">8</span>
+        <span class="lu-name">Juan Carlos Valentin</span>
+        <span class="lu-pos">3B</span>
+        <button class="lu-undo" onclick="returnToRoster(3)" title="Devolver al Roster">↩</button>
+      </div>
+    </div><div class="lu-row filled">
+      <span class="lu-num">5</span>
+      <div class="lu-content">
+        <span class="lu-badge">7</span>
+        <span class="lu-name">Enrique Almarza</span>
+        <span class="lu-pos">SS</span>
+        <button class="lu-undo" onclick="returnToRoster(4)" title="Devolver al Roster">↩</button>
+      </div>
+    </div><div class="lu-row filled">
+      <span class="lu-num">6</span>
+      <div class="lu-content">
+        <span class="lu-badge">13</span>
+        <span class="lu-name">Josnelyer Linares</span>
+        <span class="lu-pos">LF</span>
+        <button class="lu-undo" onclick="returnToRoster(5)" title="Devolver al Roster">↩</button>
+      </div>
+    </div><div class="lu-row filled">
+      <span class="lu-num">7</span>
+      <div class="lu-content">
+        <span class="lu-badge">12</span>
+        <span class="lu-name">Gustavo Jimenez</span>
+        <span class="lu-pos">CF</span>
+        <button class="lu-undo" onclick="returnToRoster(6)" title="Devolver al Roster">↩</button>
+      </div>
+    </div><div class="lu-row filled">
+      <span class="lu-num">8</span>
+      <div class="lu-content">
+        <span class="lu-badge">21</span>
+        <span class="lu-name">Osward Seijas</span>
+        <span class="lu-pos">RF</span>
+        <button class="lu-undo" onclick="returnToRoster(7)" title="Devolver al Roster">↩</button>
+      </div>
+    </div><div class="lu-row filled">
+      <span class="lu-num">9</span>
+      <div class="lu-content">
+        <span class="lu-badge">24</span>
+        <span class="lu-name">Orangel Hourne</span>
+        <span class="lu-pos">SH</span>
+        <button class="lu-undo" onclick="returnToRoster(8)" title="Devolver al Roster">↩</button>
+      </div>
+    </div><div class="lu-row filled">
+      <span class="lu-num">10</span>
+      <div class="lu-content">
+        <span class="lu-badge">34A</span>
+        <span class="lu-name">Amilcar Gimon</span>
+        <span class="lu-pos">DH</span>
+        <button class="lu-undo" onclick="returnToRoster(9)" title="Devolver al Roster">↩</button>
+      </div>
+    </div><div class="lu-row">
+        <span class="lu-num">11</span>
+        <span class="lu-empty">— vacío —</span>
+      </div><div class="lu-row">
+        <span class="lu-num">12</span>
+        <span class="lu-empty">— vacío —</span>
+      </div><div class="lu-row filled">
+      <span class="lu-num">13</span>
+      <div class="lu-content">
+        <span class="lu-badge">14</span>
+        <span class="lu-name">Felipe Aponte</span>
+        <span class="lu-pos">P</span><span class="lu-pos" style="background:var(--muted);border-color:var(--muted);font-size:.62rem;margin-left:4px">No Batea</span>
+        <button class="lu-undo" onclick="returnToRoster(12)" title="Devolver al Roster">↩</button>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- ACTIONS -->
+  <div class="action-bar" id="actionBar" style="">
+    <button class="btn btn-green" onclick="procesar()">⚾ &nbsp;Procesar</button>
+    <button class="btn btn-ghost" onclick="resetAll()">Reiniciar</button>
+  </div>
+
+</div>
+
+<!-- MODAL PREVIEW -->
+<div class="overlay" id="overlay" style="display: none;" onclick="overlayClick(event)">
+  <div class="modal" id="modal">
+    <div class="modal-head">
+      <div class="modal-title">SUPER STARS</div>
+      <div class="modal-sub">Vista Previa · Line Up</div>
+    </div>
+    <div class="modal-body" id="modalBody"><div class="prev-row">
+        <span class="prev-bat">1</span>
+        <span class="prev-num">1</span>
+        <span class="prev-name">Daniel Escobar</span>
+        <span class="prev-pos" style="">C</span>
+      </div><div class="prev-row">
+        <span class="prev-bat">2</span>
+        <span class="prev-num">2</span>
+        <span class="prev-name">Felix Tovar</span>
+        <span class="prev-pos" style="">1B</span>
+      </div><div class="prev-row">
+        <span class="prev-bat">3</span>
+        <span class="prev-num">3</span>
+        <span class="prev-name">Jackson Delgado</span>
+        <span class="prev-pos" style="">2B</span>
+      </div><div class="prev-row">
+        <span class="prev-bat">4</span>
+        <span class="prev-num">8</span>
+        <span class="prev-name">Juan Carlos Valentin</span>
+        <span class="prev-pos" style="">3B</span>
+      </div><div class="prev-row">
+        <span class="prev-bat">5</span>
+        <span class="prev-num">7</span>
+        <span class="prev-name">Enrique Almarza</span>
+        <span class="prev-pos" style="">SS</span>
+      </div><div class="prev-row">
+        <span class="prev-bat">6</span>
+        <span class="prev-num">13</span>
+        <span class="prev-name">Josnelyer Linares</span>
+        <span class="prev-pos" style="">LF</span>
+      </div><div class="prev-row">
+        <span class="prev-bat">7</span>
+        <span class="prev-num">12</span>
+        <span class="prev-name">Gustavo Jimenez</span>
+        <span class="prev-pos" style="">CF</span>
+      </div><div class="prev-row">
+        <span class="prev-bat">8</span>
+        <span class="prev-num">21</span>
+        <span class="prev-name">Osward Seijas</span>
+        <span class="prev-pos" style="">RF</span>
+      </div><div class="prev-row">
+        <span class="prev-bat">9</span>
+        <span class="prev-num">24</span>
+        <span class="prev-name">Orangel Hourne</span>
+        <span class="prev-pos" style="">SH</span>
+      </div><div class="prev-row">
+        <span class="prev-bat">10</span>
+        <span class="prev-num">34A</span>
+        <span class="prev-name">Amilcar Gimon</span>
+        <span class="prev-pos" style="">DH</span>
+      </div><div class="prev-row">
+        <span class="prev-bat">11</span>
+        <span class="prev-num">14</span>
+        <span class="prev-name">Felipe Aponte</span>
+        <span class="prev-pos" style="font-size:.6rem;letter-spacing:0">P · No Batea</span>
+      </div><div class="res-head">Reservas (8)</div><div class="res-prev-row">
+        <span class="r-num" style="min-width:38px;height:22px;font-size:.72rem">34B</span>
+        <span style="font-size:.85rem;font-weight:600">Erick Longa Jr</span>
+      </div><div class="res-prev-row">
+        <span class="r-num" style="min-width:38px;height:22px;font-size:.72rem">35</span>
+        <span style="font-size:.85rem;font-weight:600">Juan Carlos Marturell</span>
+      </div><div class="res-prev-row">
+        <span class="r-num" style="min-width:38px;height:22px;font-size:.72rem">27</span>
+        <span style="font-size:.85rem;font-weight:600">Orlando Woodroff</span>
+      </div><div class="res-prev-row">
+        <span class="r-num" style="min-width:38px;height:22px;font-size:.72rem">29</span>
+        <span style="font-size:.85rem;font-weight:600">Gabriel Morales</span>
+      </div><div class="res-prev-row">
+        <span class="r-num" style="min-width:38px;height:22px;font-size:.72rem">33</span>
+        <span style="font-size:.85rem;font-weight:600">Victor Rodriguez</span>
+      </div><div class="res-prev-row">
+        <span class="r-num" style="min-width:38px;height:22px;font-size:.72rem">60</span>
+        <span style="font-size:.85rem;font-weight:600">Marco Rivero</span>
+      </div><div class="res-prev-row">
+        <span class="r-num" style="min-width:38px;height:22px;font-size:.72rem">99</span>
+        <span style="font-size:.85rem;font-weight:600">Gabriel Chacon</span>
+      </div><div class="res-prev-row">
+        <span class="r-num" style="min-width:38px;height:22px;font-size:.72rem">99B</span>
+        <span style="font-size:.85rem;font-weight:600">Lester Rivas</span>
+      </div></div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" onclick="closeModal()">Cerrar</button>
+      <button class="btn btn-amber" onclick="exportPDF()">📄 &nbsp;Exportar PDF</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toastEl">PDF listo ✓</div>
+
+<script>
+/* ═══════════════════════════════════════════════
+   DATA
+═══════════════════════════════════════════════ */
+const MASTER = [
+  {num:"1",   name:"Daniel Escobar"},
+  {num:"2",   name:"Felix Tovar"},
+  {num:"3",   name:"Jackson Delgado"},
+  {num:"5",   name:"Daniel Ocando"},
+  {num:"7",   name:"Enrique Almarza"},
+  {num:"8",   name:"Juan Carlos Valentin"},
+  {num:"11",  name:"Braulio Ferreras"},
+  {num:"12",  name:"Gustavo Jimenez"},
+  {num:"13",  name:"Josnelyer Linares"},
+  {num:"14",  name:"Felipe Aponte"},
+  {num:"16",  name:"Euro Romero"},
+  {num:"18",  name:"Hector Landaeta"},
+  {num:"21",  name:"Osward Seijas"},
+  {num:"22",  name:"Juan Oando"},
+  {num:"24",  name:"Orangel Hourne"},
+  {num:"26",  name:"David Espinoza"},
+  {num:"27",  name:"Orlando Woodroff"},
+  {num:"29",  name:"Gabriel Morales"},
+  {num:"31",  name:"Lionnith Rosas"},
+  {num:"33",  name:"Victor Rodriguez"},
+  {num:"35",  name:"Juan Carlos Marturell"},
+  {num:"51",  name:"Nestor Huerta"},
+  {num:"60",  name:"Marco Rivero"},
+  {num:"90",  name:"Cesar Pagua"},
+  {num:"99",  name:"Gabriel Chacon"},
+  {num:"99B", name:"Lester Rivas"},
+  {num:"34A", name:"Amilcar Gimon"},
+  {num:"34B", name:"Erick Longa Jr"},
+];
+
+const POS_MAP = {1:"P",2:"C",3:"1B",4:"2B",5:"3B",6:"SS",7:"LF",8:"CF",9:"RF",10:"SH",11:"DH",12:"DH"};
+
+/* ═══════════════════════════════════════════════
+   STATE
+   rosterDay : [{num, name, batVal, posVal, batErr, posErr}]
+   lineup    : 13-slot array (index 0 = bat 1 … index 12 = bat 13)
+               each slot: null or {num, name, bat, pos, posLabel, noBate}
+═══════════════════════════════════════════════ */
+let rosterDay = [];
+let lineup    = new Array(13).fill(null);
+
+/* ═══════════════════════════════════════════════
+   SEARCH
+═══════════════════════════════════════════════ */
+function quickSearch(v){ document.getElementById('sInput').value=v; buscar(); }
+
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('sInput').addEventListener('keydown',e=>{ if(e.key==='Enter') buscar(); });
+  renderLineup();
+  updateStats();
+});
+
+function buscar(){
+  const raw = document.getElementById('sInput').value.trim();
+  const q   = raw.toUpperCase();
+  const fl  = document.getElementById('sFlash');
+  fl.style.display = 'flex';
+
+  if(!q){ fl.innerHTML=''; return; }
+
+  const found = MASTER.find(p=>p.num.toUpperCase()===q);
+  if(!found){
+    fl.innerHTML=`<span class="f-err">✗ &nbsp;No encontrado: <strong>${raw}</strong></span>`;
+    return;
+  }
+  if(lineup.some(s=>s&&s.num===found.num)){
+    fl.innerHTML=`<span class="f-warn">⚾ &nbsp;<strong>${found.num} – ${found.name}</strong> ya está en el Line Up</span>`;
+    return;
+  }
+  if(rosterDay.some(p=>p.num===found.num)){
+    fl.innerHTML=`<span class="f-warn">⚠ &nbsp;Pelotero incluido: <strong>${found.num} – ${found.name}</strong></span>`;
+    return;
+  }
+
+  rosterDay.push({num:found.num, name:found.name, batVal:"", posVal:"", batErr:"", posErr:""});
+  document.getElementById('sInput').value='';
+  fl.innerHTML=`<span class="f-ok">✓ &nbsp;<strong>${found.num} – ${found.name}</strong> agregado al Roster del Día</span>`;
+  renderRoster(); updateStats();
+  toast(`${found.name} → Roster del Día`);
+}
+
+/* ═══════════════════════════════════════════════
+   ROSTER DEL DÍA
+═══════════════════════════════════════════════ */
+function renderRoster(){
+  const card = document.getElementById('rosterCard');
+  const list = document.getElementById('rosterList');
+  document.getElementById('rCount').textContent = rosterDay.length;
+
+  if(rosterDay.length===0){ card.style.display='none'; return; }
+  card.style.display='';
+
+  list.innerHTML = rosterDay.map(p=>`
+    <div class="r-row" id="rr_${sid(p.num)}">
+      <span class="r-num">${p.num}</span>
+      <span class="r-name">${p.name}</span>
+      <div class="r-fields">
+        <div class="r-field">
+          <span class="r-lbl">Turno</span>
+          <input class="r-input${p.batVal?' filled':''}${p.batErr?' err':''}"
+            id="bat_${sid(p.num)}" type="number" min="1" max="13"
+            value="${p.batVal}" placeholder="–" inputmode="numeric"
+            oninput="onInput('${p.num}','bat',this)">
+          <span class="r-err" id="baterr_${sid(p.num)}">${p.batErr}</span>
+        </div>
+        <div class="r-field">
+          <span class="r-lbl">Pos (1-12)</span>
+          <input class="r-input${p.posVal?' filled':''}${p.posErr?' err':''}"
+            id="pos_${sid(p.num)}" type="number" min="1" max="12"
+            value="${p.posVal}" placeholder="–" inputmode="numeric"
+            oninput="onInput('${p.num}','pos',this)">
+          <span class="r-err" id="poserr_${sid(p.num)}">${p.posErr}</span>
+        </div>
+      </div>
+      <button class="r-del" onclick="removeRoster('${p.num}')" title="Quitar">✕</button>
+    </div>`).join('');
+}
+
+function onInput(num, field, el){
+  const p = rosterDay.find(x=>x.num===num);
+  if(!p) return;
+
+  const val = el.value.trim();
+  const n   = parseInt(val);
+
+  if(field==='bat'){
+    p.batVal = val;
+    p.batErr = '';
+    el.classList.toggle('filled', !!val);
+    el.classList.remove('err');
+
+    if(val && !isNaN(n)){
+      // turno 13 solo para pitcher (pos 1)
+      // solo muestra error si la posicion ya esta llena y no es 1
+      if(n===13){
+        const posN = parseInt(p.posVal);
+        if(!isNaN(posN) && posN!==1){
+          p.batErr = 'Turno 13: solo pitcher';
+          el.classList.add('err');
+          document.getElementById('baterr_'+sid(num)).textContent = p.batErr;
+          return;
+        }
+      }
+      // duplicado en lineup
+      if(lineup[n-1]){
+        p.batErr = 'Turno en uso';
+        el.classList.add('err');
+        document.getElementById('baterr_'+sid(num)).textContent = p.batErr;
+        return;
+      }
+    }
+    document.getElementById('baterr_'+sid(num)).textContent = '';
+  }
+
+  if(field==='pos'){
+    p.posVal = val;
+    p.posErr = '';
+    el.classList.toggle('filled', !!val);
+    el.classList.remove('err');
+
+    if(val && !isNaN(n)){
+      if(n<1||n>12||!POS_MAP[n]){
+        p.posErr = 'Pos inválida';
+        el.classList.add('err');
+        document.getElementById('poserr_'+sid(num)).textContent = p.posErr;
+        return;
+      }
+      // si turno es 13, solo acepta pos 1
+      const batN = parseInt(p.batVal);
+      if(batN===13 && n!==1){
+        p.posErr = 'Turno 13: solo pitcher (pos 1)';
+        el.classList.add('err');
+        document.getElementById('poserr_'+sid(num)).textContent = p.posErr;
+        return;
+      }
+      // pos duplicada
+      if(lineup.some(s=>s&&s.pos===n)){
+        p.posErr = 'Posición ya fue seleccionada';
+        el.classList.add('err');
+        document.getElementById('poserr_'+sid(num)).textContent = p.posErr;
+        return;
+      }
+    }
+    document.getElementById('poserr_'+sid(num)).textContent = '';
+  }
+
+  tryPromote(num);
+}
+
+function tryPromote(num){
+  const p   = rosterDay.find(x=>x.num===num);
+  if(!p) return;
+
+  const bat = parseInt(p.batVal);
+  const pos = parseInt(p.posVal);
+
+  if(isNaN(bat)||bat<1||bat>13) return;
+  if(isNaN(pos)||pos<1||pos>12||!POS_MAP[pos]) return;
+  if(p.batErr||p.posErr) return;
+
+  // turno 13 solo pitcher
+  if(bat===13 && pos!==1) return;
+
+  // slot ocupado?
+  if(lineup[bat-1]){
+    p.batErr='Turno en uso';
+    const el=document.getElementById('bat_'+sid(num));
+    if(el){el.classList.add('err'); document.getElementById('baterr_'+sid(num)).textContent=p.batErr;}
+    return;
+  }
+  // pos duplicada?
+  if(lineup.some(s=>s&&s.pos===pos)){
+    p.posErr='Posición ya fue seleccionada';
+    const el=document.getElementById('pos_'+sid(num));
+    if(el){el.classList.add('err'); document.getElementById('poserr_'+sid(num)).textContent=p.posErr;}
+    return;
+  }
+
+  // promote
+  rosterDay = rosterDay.filter(x=>x.num!==num);
+  lineup[bat-1] = {num:p.num, name:p.name, bat, pos, posLabel:POS_MAP[pos], noBate: bat===13};
+  renderRoster(); renderLineup(); updateStats();
+  toast(`${p.name} → Line Up #${bat}`);
+}
+
+function removeRoster(num){
+  rosterDay = rosterDay.filter(p=>p.num!==num);
+  renderRoster(); updateStats();
+}
+
+/* ═══════════════════════════════════════════════
+   LINE UP  (13 slots — slot 13 exclusive to pitcher)
+═══════════════════════════════════════════════ */
+function renderLineup(){
+  const list = document.getElementById('lineupList');
+  const filled = lineup.filter(Boolean).length;
+  document.getElementById('lCount').textContent = `${filled} / 13`;
+
+  list.innerHTML = lineup.map((slot,i)=>{
+    const n = i+1;
+    if(!slot){
+      return `<div class="lu-row">
+        <span class="lu-num">${n}</span>
+        <span class="lu-empty">— vacío —</span>
+      </div>`;
+    }
+    const posDisplay = slot.noBate
+      ? `<span class="lu-pos">${slot.posLabel}</span><span class="lu-pos" style="background:var(--muted);border-color:var(--muted);font-size:.62rem;margin-left:4px">No Batea</span>`
+      : `<span class="lu-pos">${slot.posLabel}</span>`;
+    return `<div class="lu-row filled">
+      <span class="lu-num">${n}</span>
+      <div class="lu-content">
+        <span class="lu-badge">${slot.num}</span>
+        <span class="lu-name">${slot.name}</span>
+        ${posDisplay}
+        <button class="lu-undo" onclick="returnToRoster(${i})" title="Devolver al Roster">↩</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  updateActionBar();
+}
+
+function returnToRoster(idx){
+  const s = lineup[idx];
+  if(!s) return;
+  lineup[idx] = null;
+  rosterDay.push({num:s.num, name:s.name, batVal:"", posVal:"", batErr:"", posErr:""});
+  renderRoster(); renderLineup(); updateStats();
+  toast(`${s.name} devuelto al Roster`);
+}
+
+/* ═══════════════════════════════════════════════
+   UI HELPERS
+═══════════════════════════════════════════════ */
+function updateStats(){
+  document.getElementById('statR').textContent = rosterDay.length;
+  document.getElementById('statL').textContent = lineup.filter(Boolean).length;
+}
+function updateActionBar(){
+  const hasAny = rosterDay.length>0 || lineup.some(Boolean);
+  document.getElementById('actionBar').style.display = hasAny?'':'none';
+}
+
+function resetAll(){
+  rosterDay=[];
+  lineup=new Array(13).fill(null);
+  document.getElementById('sInput').value='';
+  document.getElementById('sFlash').style.display='none';
+  renderRoster(); renderLineup(); updateStats();
+  toast('Reiniciado');
+}
+
+/* ═══════════════════════════════════════════════
+   PROCESAR → MODAL
+   Pitcher con turno 13: moverlo al primer hueco
+   después del último jugador normal, siempre último.
+═══════════════════════════════════════════════ */
+function procesar(){
+  // Separate pitcher-13 from normal starters
+  let pitcher13 = lineup[12]; // slot index 12 = bat 13
+  let normals   = lineup.slice(0,12).filter(Boolean);
+
+  // Build final ordered list
+  let starters = [...normals].sort((a,b)=>a.bat-b.bat);
+
+  if(pitcher13){
+    // pitcher goes right after last normal player
+    const lastBat = starters.length > 0 ? starters[starters.length-1].bat : 0;
+    starters.push({...pitcher13, bat: lastBat+1, noBate:true});
+  }
+
+  const reserves = rosterDay;
+
+  if(starters.length===0 && reserves.length===0){
+    toast('Nada para procesar'); return;
+  }
+
+  let html='';
+  if(starters.length>0){
+    starters.forEach(p=>{
+      const posStr = p.noBate ? p.posLabel + ' · No Batea' : p.posLabel;
+      html+=`<div class="prev-row">
+        <span class="prev-bat">${p.bat}</span>
+        <span class="prev-num">${p.num}</span>
+        <span class="prev-name">${p.name}</span>
+        <span class="prev-pos" style="${p.noBate?'font-size:.6rem;letter-spacing:0':''}">${posStr}</span>
+      </div>`;
+    });
+  } else {
+    html='<div class="empty">No hay jugadores en el Line Up aún.</div>';
+  }
+
+  if(reserves.length>0){
+    html+=`<div class="res-head">Reservas (${reserves.length})</div>`;
+    reserves.forEach(p=>{
+      html+=`<div class="res-prev-row">
+        <span class="r-num" style="min-width:38px;height:22px;font-size:.72rem">${p.num}</span>
+        <span style="font-size:.85rem;font-weight:600">${p.name}</span>
+      </div>`;
+    });
+  }
+
+  document.getElementById('modalBody').innerHTML=html;
+  document.getElementById('overlay').style.display='flex';
+}
+
+function overlayClick(e){ if(e.target===document.getElementById('overlay')) closeModal(); }
+function closeModal(){ document.getElementById('overlay').style.display='none'; }
+
+/* ═══════════════════════════════════════════════
+   EXPORT PDF  (no external lib — pure canvas/data)
+═══════════════════════════════════════════════ */
+function exportPDF(){
+  // We build the PDF manually using jsPDF loaded inline via CDN
+  // Load script dynamically if not already present
+  if(!window.jspdf){
+    const s=document.createElement('script');
+    s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+    s.onload=()=>_doPDF();
+    document.head.appendChild(s);
+  } else {
+    _doPDF();
+  }
+}
+
+function _doPDF(){
+  const {jsPDF} = window.jspdf;
+  const W=215.9, H=279.4;
+  const doc = new jsPDF({unit:'mm', format:'letter', orientation:'portrait'});
+
+  let pitcher13 = lineup[12];
+  let normals   = lineup.slice(0,12).filter(Boolean);
+  const starters = [...normals].sort((a,b)=>a.bat-b.bat);
+  if(pitcher13){
+    const lastBat = starters.length>0 ? starters[starters.length-1].bat : 0;
+    starters.push({...pitcher13, bat:lastBat+1, noBate:true});
+  }
+  const reserves = rosterDay;
+
+  function drawHalf(oY){
+    // oY = vertical offset (0 = top half, H/2 = bottom half)
+    const ML  = 12;
+    const MR  = W - 12;
+    const CW  = MR - ML;
+    const MAX_Y = oY + H/2 - 4; // hard bottom limit for this half
+
+    let y = oY + 7;
+
+    // ── TITLE ────────────────────────────────────────
+    doc.setFont('helvetica','bold'); doc.setFontSize(15);
+    doc.setTextColor(0,0,0);
+    doc.text('SUPER STARS', W/2, y, {align:'center'});
+    y += 5;
+    doc.setFont('helvetica','normal'); doc.setFontSize(6.5);
+    doc.setTextColor(80,80,80);
+    doc.setCharSpace(2.5); doc.text('LINE UP', W/2, y, {align:'center'}); doc.setCharSpace(0);
+    y += 3.5;
+
+    // ── FORM FIELDS (short lines) ────────────────────
+    doc.setFont('helvetica','bold'); doc.setFontSize(7); doc.setTextColor(0,0,0);
+    const formFields = ['Fecha:', 'Equipo contrario:', 'Manager:'];
+    const lineLen = 55; // short fixed line length in mm
+    formFields.forEach(f=>{
+      doc.text(f, ML, y);
+      const lx = ML + doc.getTextWidth(f) + 2;
+      doc.setDrawColor(100,100,100); doc.setLineWidth(.25);
+      doc.line(lx, y, lx + lineLen, y);
+      y += 5.5;
+    });
+
+    y += 2;
+    doc.setDrawColor(0,0,0); doc.setLineWidth(.5);
+    doc.line(ML, y, MR, y); y += 4;
+
+    // ── COLUMN LAYOUT: lineup left, reserves right ───
+    // Left column: 58% of content width
+    // Right column: remaining 38% (with 4mm gap)
+    const GAP  = 5;
+    const LCW  = CW * 0.58;   // left col width
+    const RCX  = ML + LCW + GAP; // right col start x
+    const RCW  = MR - RCX;    // right col width
+
+    // ── MEASURE widest name for POS alignment ────────
+    const NAME_FS = 9;
+    doc.setFontSize(NAME_FS);
+    let maxNW = 0;
+    starters.forEach(p=>{
+      const w = doc.getTextWidth(p.name);
+      if(w > maxNW) maxNW = w;
+    });
+    // cap maxNW so POS column doesn't overflow left col
+    const T_X    = ML + 4;
+    const NUM_X  = ML + 11;
+    const NUM_W  = 11;
+    const NAME_X = NUM_X + NUM_W + 2;
+    const availForName = (ML + LCW) - NAME_X - 8;
+    if(maxNW > availForName) maxNW = availForName;
+    const POS_X = NAME_X + maxNW + 3;
+
+    const ROW_H = 6;
+
+    // ── LINE UP HEADER ───────────────────────────────
+    doc.setFont('helvetica','bold'); doc.setFontSize(6); doc.setTextColor(60,60,60);
+    doc.setCharSpace(1); doc.text('LINE UP', ML, y); doc.setCharSpace(0);
+    // col headers
+    doc.setFontSize(5.5); doc.setTextColor(100,100,100);
+    doc.text('T',    T_X,            y, {align:'center'});
+    doc.text('#',    NUM_X+NUM_W/2,  y, {align:'center'});
+    doc.text('NOMBRE', NAME_X,       y);
+    doc.text('POS',  POS_X,          y);
+    y += 2;
+    doc.setDrawColor(0,0,0); doc.setLineWidth(.3);
+    doc.line(ML, y, ML+LCW, y); y += 4;
+
+    // ── STARTERS ────────────────────────────────────
+    const lineupStartY = y;
+    starters.forEach(p=>{
+      // turno
+      doc.setFont('helvetica','bold'); doc.setFontSize(10); doc.setTextColor(0,0,0);
+      doc.text(String(p.bat), T_X, y, {align:'center'});
+      // number
+      doc.setFont('helvetica','bold'); doc.setFontSize(6.5); doc.setTextColor(50,50,50);
+      doc.text(p.num, NUM_X+NUM_W/2, y, {align:'center'});
+      // name
+      doc.setFont('helvetica','normal'); doc.setFontSize(NAME_FS); doc.setTextColor(0,0,0);
+      // truncate if needed
+      let nm = p.name;
+      doc.setFontSize(NAME_FS);
+      while(nm.length>1 && doc.getTextWidth(nm)>availForName) nm=nm.slice(0,-1);
+      if(nm!==p.name) nm=nm.slice(0,-1)+'.';
+      doc.text(nm, NAME_X, y);
+      // pos or No Batea
+      doc.setFont('helvetica','bold'); doc.setFontSize(p.noBate?6:8); doc.setTextColor(0,0,0);
+      doc.text(p.noBate ? p.posLabel+' No Batea' : p.posLabel, POS_X, y);
+      // separator
+      doc.setDrawColor(210,210,210); doc.setLineWidth(.2);
+      doc.line(ML, y+2, ML+LCW, y+2);
+      y += ROW_H;
+    });
+
+    // ── RESERVES (right column) ──────────────────────
+    if(reserves.length > 0){
+      let ry = lineupStartY;
+
+      // header
+      doc.setFont('helvetica','bold'); doc.setFontSize(6); doc.setTextColor(60,60,60);
+      doc.setCharSpace(1); doc.text('RESERVAS', RCX, ry); doc.setCharSpace(0);
+      ry += 2;
+      doc.setDrawColor(0,0,0); doc.setLineWidth(.3);
+      doc.line(RCX, ry, RCX+RCW, ry); ry += 4;
+
+      reserves.forEach(p=>{
+        if(ry > MAX_Y) return; // don't overflow half
+        doc.setFont('helvetica','bold'); doc.setFontSize(6.5); doc.setTextColor(60,60,60);
+        doc.text(p.num, RCX, ry);
+        doc.setFont('helvetica','normal'); doc.setFontSize(7); doc.setTextColor(0,0,0);
+        // truncate to fit column
+        let rn = p.name;
+        while(rn.length>1 && doc.getTextWidth(rn) > RCW-10) rn=rn.slice(0,-1);
+        if(rn!==p.name) rn=rn.slice(0,-1)+'.';
+        doc.text(rn, RCX+9, ry);
+        // separator
+        doc.setDrawColor(210,210,210); doc.setLineWidth(.2);
+        doc.line(RCX, ry+2, RCX+RCW, ry+2);
+        ry += 5.5;
+      });
+    }
+
+    // ── HALF BORDER (bottom rule) ────────────────────
+    doc.setDrawColor(180,180,180); doc.setLineWidth(.3);
+    doc.line(ML, oY + H/2 - 2, MR, oY + H/2 - 2);
+  }
+
+  // ── DRAW BOTH HALVES ─────────────────────────────────
+  drawHalf(0);
+  drawHalf(H/2);
+
+  // dashed cut line
+  doc.setDrawColor(150,150,150); doc.setLineWidth(.4);
+  doc.setLineDashPattern([3,3], 0);
+  doc.line(0, H/2, W, H/2);
+  doc.setLineDashPattern([], 0);
+
+  // ── OUTPUT ───────────────────────────────────────────
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  if(isIOS){
+    const blob = doc.output('blob');
+    const blobUrl = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = blobUrl; a.target='_blank'; a.rel='noopener';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(()=>URL.revokeObjectURL(blobUrl), 10000);
+  } else {
+    doc.save('SuperStart_LineUp.pdf');
+  }
+  closeModal();
+  toast('PDF listo ✓');
+}
+
+/* ═══════════════════════════════════════════════
+   TOAST  &  UTILS
+═══════════════════════════════════════════════ */
+function sid(n){ return n.replace(/[^a-zA-Z0-9]/g,'_'); }
+
+function toast(msg){
+  const el=document.getElementById('toastEl');
+  el.textContent=msg; el.classList.add('show');
+  clearTimeout(el._t);
+  el._t=setTimeout(()=>el.classList.remove('show'), 2400);
+}
+</script>
+
+<!-- jsPDF loaded on demand; also preload here so it's ready -->
+<script src="./Index_files/jspdf.umd.min.js.descarga" defer=""></script>
+
+
+</body></html>
